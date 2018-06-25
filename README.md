@@ -1,0 +1,1 @@
+This is where it will all start I am trying to document the changes that I make in my personal projects. I have worked many SBC's Raspberry Pi's and Tinker Boards and have created some great projects and systems and need to capture the configuration changes and figured this would be a good starting point.
