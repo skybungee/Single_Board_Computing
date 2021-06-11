@@ -17,6 +17,11 @@ if grep -q 'dtparam=i2c1=on' /boot/config.txt; then
 else
   echo 'dtparam=i2c1=on' >> /boot/config.txt
 fi
+if grep -q 'dtparam=i2c1=off' /boot/config.txt; then
+  echo 'Seems i2c1 parameter is set to off, commenting out line.'
+else
+  echo '# dtparam=i2c1=off' >> /boot/config.txt
+fi
 if grep -q 'dtparam=i2c_arm=on' /boot/config.txt; then
   echo 'Seems i2c_arm parameter already set, skip this step.'
 else
