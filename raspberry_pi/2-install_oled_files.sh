@@ -17,13 +17,11 @@ sudo pip3 install Adafruit_BBIO
 sudo pip3 install image
 sudo apt-get install libopenjp2-7 -y
 sudo apt install libtiff5 -y
-sudo i2cdetect -y 1
-sudo python3 -m pip install --upgrade pip setuptools wheel
-git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
-cd Adafruit_Python_SSD1306/
-sudo python3 setup.py install
-sudo python3 ~/Single_Board_Computing/raspberry_pi/Adafruit_Python_SSD1306/examples/stats.py
-
+./setup-i2c.sh
+sleep 5
+echo 'System is rebooting try sshing to system in 1 minute'
+sleep 10
+reboot
 ###############################################################################################
 echo "################################################################"
 echo "###################  Install files for oled  ###################"
