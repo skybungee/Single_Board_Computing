@@ -11,6 +11,12 @@ if [ "$(id -u)" != 0 ]; then
 fi
  
 # enable I2C on Raspberry Pi
+if grep -q 'i2c-dev' /etc/modules; then
+  echo 'Seems i2c-dev module already exists, skip this step.'
+else
+  echo 'Adding i2c-dev module to the modules file'
+  echo 'i2c-dev' >> /etc/modules
+fi
 echo '>>> Enable I2C'
 if grep -q 'dtparam=i2c1=on' /boot/config.txt; then
   echo 'Seems i2c1 parameter already set, skip this step.'

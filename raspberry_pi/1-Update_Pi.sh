@@ -18,6 +18,9 @@ sudo apt-get update
 sudo apt-get upgrade -y
 
 # This is to start the cockpit service and enable for it too start on reboot
+sleep 5
+echo 'System is going to reboot............'
+echo 'Trying sshing to the raspberry pi in about 1 Minute'
 sudo reboot
 
 ###############################################################################################
