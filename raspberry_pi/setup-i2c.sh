@@ -19,8 +19,9 @@ else
 fi
 if grep -q 'dtparam=i2c_arm=off' /boot/config.txt; then
   echo 'Seems i2c1 parameter is set to off, commenting out line.'
+  sed -e '/dtparam=i2c_arm=off/ s/^#*/#/' -i /boot/config.txt
 else
-  echo '# dtparam=i2c_arm=off' >> /boot/config.txt
+  echo 'Seems i2c parameter is set to on already'
 fi
 if grep -q 'dtparam=i2c_arm=on' /boot/config.txt; then
   echo 'Seems i2c_arm parameter already set, skip this step.'
